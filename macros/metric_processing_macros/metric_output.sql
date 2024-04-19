@@ -33,7 +33,7 @@
 SELECT
   {{ fhir_dbt_utils.current_datetime() }} as execution_datetime,
   '{{this.name}}' AS metric_name,
-  metric_date,
+  SAFE_CAST(metric_date AS timestamp) as metric_date,
   site,
   source_system,
   fhir_mapping,

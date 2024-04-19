@@ -26,12 +26,12 @@ fhir_dbt_analytics:
       # Name of your GCP project in which the dataset will be created and BigQuery jobs run.
       # See here for creating a new GCP project:
       # https://cloud.google.com/resource-manager/docs/creating-managing-projects
-      project: project
+      project: aou-ehr-ops-curation-prod
 
       # Name of the dataset that dbt creates and writes to.
       # Recommended: dbt_<username>. See here for more details:
       # https://docs.getdbt.com/docs/get-started/connection-profiles#understanding-target-schemas
-      dataset: dataset
+      dataset: dbt_test7_dv_loose_20230701_20231001
 
       # See https://docs.getdbt.com/docs/get-started/connection-profiles#understanding-threads.
       threads: 4
