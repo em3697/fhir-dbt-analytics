@@ -35,7 +35,7 @@ limitations under the License. */
     FROM ({{ active_encounters() }}) AS ActiveEncounters
     LEFT JOIN {{ ref('DiagnosticReport') }} AS D
       ON ActiveEncounters.id = D.encounter.encounterId
-      AND SAFE_CAST(ActiveEncounters.metric_date as timestamp) = D.metric_date
+      AND DATE(ActiveEncounters.metric_date) = D.metric_date
 {%- endset -%}
 
 {{- calculate_metric(

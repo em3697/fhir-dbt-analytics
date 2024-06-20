@@ -25,7 +25,7 @@
 {%- endif -%}
 
 {%- if include_metric_date %}
-      SAFE_CAST({{ prefix ~ 'metric_date' }} AS timestamp) as metric_date,
+      DATE({{ prefix ~ 'metric_date' }} ) as metric_date,
 {%- endif %}
       {{ site(table_alias, fhir_resource) }} AS site,
       {{ source_system(table_alias, fhir_resource) }} AS source_system,

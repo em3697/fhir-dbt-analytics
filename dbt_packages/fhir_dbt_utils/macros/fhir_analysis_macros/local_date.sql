@@ -14,15 +14,6 @@
 
 {% macro local_date(date_column, date_column_data_type, timezone = var('timezone_default')) -%}
 
-{%- if date_column_data_type == 'TIMESTAMP' -%}
-    {{ date_column }}
-{%- else -%}
-    IF(
-      CHAR_LENGTH({{ date_column }}) = 10,
-      {{ fhir_dbt_utils.safe_cast_as_date(date_column) }},
-      {{ fhir_dbt_utils.safe_cast_as_date(
-        fhir_dbt_utils.safe_cast_as_timestamp(date_column)) }}
-    )
-{%- endif -%}
+      DATE({{ date_column }})
 
 {%- endmacro -%}

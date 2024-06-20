@@ -21,6 +21,7 @@ sources:
     schema: "{{ var('schema') }}"
     tables:
       - name: AllergyIntolerance
+      - name: Basic
       - name: Binary
       - name: CarePlan
       - name: CareTeam
